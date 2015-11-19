@@ -1,266 +1,218 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
-  <title>Material Base Theme</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-  <!-- CSS  -->
-  <link href="css/materialize.css" type="text/css" rel="stylesheet">
-  <link href="css/style.css" type="text/css" rel="stylesheet" >
-  <script src="js/modernizr.js"></script> <!-- Modernizr -->
+    <title>SSM</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+
+    <!-- Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="css/animate.css" rel="stylesheet" />
+
+    <style>
+    .glyphicon-lg
+{
+    font-size:35px
+}
+.info-block
+{
+    border-right:2px solid #E6E6E6;margin-bottom:25px
+}
+.info-block .square-box
+{
+    width:75px;min-height:75px;margin-right:10px;text-align:center!important;background-color:#676767;padding:10px 0
+}
+.info-block.block-info
+{
+    border-color:#20819e
+}
+.info-block.block-info .square-box
+{
+    background-color:#20819e;color:#FFF
+}
+        p {
+            margin:0px;
+        }
+        h4 {
+            margin-top:4px;
+            margin-bottom:4px;
+        }
+        .searchable-container {
+
+            margin-top:12px;
+        }
+        header {
+
+            background:#20819e;
+            color:#fff;
+            margin-bottom:30px;
+        }
+
+        .navbar-brand {
+            color:#fff;
+        }
+    </style>
+    <!-- Squad theme CSS -->
+  
+   
 </head>
-<body id="top" class="scrollspy">
 
-<!-- Pre Loader -->
-<div id="loader-wrapper">
-    <div id="loader"></div>
- 
-    <div class="loader-section section-left"></div>
-    <div class="loader-section section-right"></div>
- 
-</div>
+<body >
 
- <div class="navbar-fixed">
-    <nav id="nav_f" class="default_color" role="navigation">
-      <div class="container">
-        <div class="nav-wrapper"><a id="logo-container" href="#top" class="brand-logo">material</a>
-          <ul id="nav-mobile" class="right side-nav">
-            <li><a href="#intro">Service</a></li>
-            <li><a href="#work">Work</a></li>
-            <li><a href="#contact">Contact</a></li>
-             <li><a href="http://goo.gl/Y6596f" target="_blank">Free Download</a></li>
-          </ul><a href="#" data-activates="nav-mobile" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
-        </div>
-      </div>
-    </nav>
-  </div>
 
-  <div class="section no-pad-bot" id="index-banner">
-    <div class="container">
-      <h1 class="text_h center header cd-headline letters type">
-      <span>My favourite food is</span> 
-      <span class="cd-words-wrapper waiting">
-        <b class="is-visible">pizza</b>
-        <b>sushi</b>
-        <b>steak</b>
-      </span>
-    </h1>
-    </div>
-  </div>
-
- <div id="intro" class="section scrollspy">
+    <header class="navbar navbar-static-top bs-docs-nav" id="top" role="banner">
   <div class="container">
-      <!--   Icon Section   -->
-    <div class="row">
-          <div  class="col s12">
-            <h2 class="center header text_h2"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. <span class="span_h2"> Phasellus  </span>vestibulum lorem risus, nec suscipit lorem <span class="span_h2"> laoreet quis.</span </h2>
-          </div>
-
-            <div  class="col s12 m4 l4">
-              <div class="center promo promo-example">
-                <i class="mdi-image-flash-on"></i>
-                <h5 class="promo-caption">Speeds up development</h5>
-                <p class="light center">We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components.</p>
-              </div>
-            </div>
-            <div class="col s12 m4 l4">
-              <div class="center promo promo-example">
-                <i class="mdi-social-group"></i>
-                <h5 class="promo-caption">User Experience Focused</h5>
-                <p class="light center">By utilizing elements and principles of Material Design, we were able to create a framework that focuses on User Experience.</p>
-              </div>
-            </div>
-            <div class="col s12 m4 l4">
-              <div class="center promo promo-example">
-                <i class="mdi-action-settings"></i>
-               <h5 class="promo-caption">Easy to work with</h5>
-                <p class="light center">We have provided detailed documentation as well as specific code examples to help new users get started.</p>
-              </div>
-            </div>
-      </div>
-
-    <div class="row">
-        <div  class="col s12 m4 l4">
-          <div class="center promo promo-example">
-            <i class="mdi-action-favorite"></i>
-            <h5 class="promo-caption">Materializecss</h5>
-            <p class="light center">We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components.</p>
-          </div>
-        </div>
-        <div class="col s12 m4 l4">
-          <div class="center promo promo-example">
-            <i class="mdi-communication-phone"></i>
-            <h5 class="promo-caption">Simplifies</h5>
-            <p class="light center">By utilizing elements and principles of Material Design, we were able to create a framework that focuses on User Experience.</p>
-          </div>
-        </div>
-        <div class="col s12 m4 l4">
-          <div class="center promo promo-example">
-            <i class="mdi-communication-stay-current-portrait"></i>
-           <h5 class="promo-caption">Lorem Ipsum</h5>
-            <p class="light center">We have provided detailed documentation as well as specific code examples to help new users get started.</p>
-          </div>
-        </div>
-      </div>
+    <div class="navbar-header">
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="../" class="navbar-brand">Soni matrimonial</a>
     </div>
+    
   </div>
+</header>
 
-<div class="section scrollspy" id="work">
+
+
+
+ 
+
+
  <div class="container">
-        <h2 class="header text_b"> Last Work </h2>
-      <div class="row">
-          <div class="col s12 m4 l4">
-               <div class="card">
-                  <div class="card-image waves-effect waves-block waves-light">
-                    <img class="activator" src="img/03.jpg">
-                  </div>
-                  <div class="card-content">
-                    <span class="card-title activator grey-text text-darken-4">Card Title <i class="mdi-navigation-more-vert right"></i></span>
-                    <p><a href="#">This is a link</a></p>
-                  </div>
-                  <div class="card-reveal">
-                    <span class="card-title grey-text text-darken-4">Card Title <i class="mdi-navigation-close right"></i></span>
-                    <p>Here is some more information about this product that is only revealed once clicked on.</p>
-                  </div>
-              </div>
-          </div>
 
-          <div class="col s12 m4 l4">
-               <div class="card">
-                  <div class="card-image waves-effect waves-block waves-light">
-                    <img class="activator"  src="img/04.jpg">
-                  </div>
-                  <div class="card-content">
-                    <span class="card-title activator grey-text text-darken-4">Card Title <i class="mdi-navigation-more-vert right"></i></span>
-                    <p><a href="#">This is a link</a></p>
-                  </div>
-                  <div class="card-reveal">
-                    <span class="card-title grey-text text-darken-4">Card Title <i class="mdi-navigation-close right"></i></span>
-                    <p>Here is some more information about this product that is only revealed once clicked on.</p>
-                  </div>
-              </div>
-          </div>
-
-          <div class="col s12 m4 l4">
-               <div class="card">
-                  <div class="card-image waves-effect waves-block waves-light">
-                    <img class="activator"  src="img/03.jpg">
-                  </div>
-                  <div class="card-content">
-                    <span class="card-title activator grey-text text-darken-4">Card Title <i class="mdi-navigation-more-vert right"></i></span>
-                    <p><a href="#">This is a link</a></p>
-                  </div>
-                  <div class="card-reveal">
-                    <span class="card-title grey-text text-darken-4">Card Title <i class="mdi-navigation-close right"></i></span>
-                    <p>Here is some more information about this product that is only revealed once clicked on.</p>
-                  </div>
-              </div>
-          </div>
-        </div>
+        <h3>Welcome User !!</h3>
+     <div class="well">
          <div class="row">
-          <div class="col s12 m4 l4">
-               <div class="card">
-                  <div class="card-image waves-effect waves-block waves-light">
-                    <img class="activator" src="img/04.jpg">
-                  </div>
-                  <div class="card-content">
-                    <span class="card-title activator grey-text text-darken-4">Card Title <i class="mdi-navigation-more-vert right"></i></span>
-                    <p><a href="#">This is a link</a></p>
-                  </div>
-                  <div class="card-reveal">
-                    <span class="card-title grey-text text-darken-4">Card Title <i class="mdi-navigation-close right"></i></span>
-                    <p>Here is some more information about this product that is only revealed once clicked on.</p>
-                  </div>
-              </div>
-          </div>
-
-          <div class="col s12 m4 l4">
-               <div class="card">
-                  <div class="card-image waves-effect waves-block waves-light">
-                    <img class="activator"  src="img/05.jpg">
-                  </div>
-                  <div class="card-content">
-                    <span class="card-title activator grey-text text-darken-4">Card Title <i class="mdi-navigation-more-vert right"></i></span>
-                    <p><a href="#">This is a link</a></p>
-                  </div>
-                  <div class="card-reveal">
-                    <span class="card-title grey-text text-darken-4">Card Title <i class="mdi-navigation-close right"></i></span>
-                    <p>Here is some more information about this product that is only revealed once clicked on.</p>
-                  </div>
-              </div>
-          </div>
-
-          <div class="col s12 m4 l4">
-               <div class="card">
-                  <div class="card-image waves-effect waves-block waves-light">
-                    <img class="activator"  src="img/03.jpg">
-                  </div>
-                  <div class="card-content">
-                    <span class="card-title activator grey-text text-darken-4">Card Title <i class="mdi-navigation-more-vert right"></i></span>
-                    <p><a  href="#">This is a link</a></p>
-                  </div>
-                  <div class="card-reveal">
-                    <span class="card-title grey-text text-darken-4">Card Title <i class="mdi-navigation-close right"></i></span>
-                    <p>Here is some more information about this product that is only revealed once clicked on.</p>
-                  <a class="waves-effect waves-light btn"><i class="mdi-file-cloud left"></i>button</a>
-                  </div>
-              </div>
-          </div>
+	
+        <div style="margin-bottom:10px;" class="col-md-12">
+            <input type="search" class="form-control" id="input-search" placeholder="Search User..." >
         </div>
-     </div>
-  </div>
-     </div>
-  </div>
 
+          
+           
+        <div class="searchable-container">
+            <div class="items col-xs-12 clearfix">
+               <div class="info-block block-info clearfix">
+                    <div class="square-box pull-left">
+                        <span class="glyphicon glyphicon-user glyphicon-lg"></span>
+                    </div>
+                   
+                    <h4>Tyreese Burn</h4>
+                 <p>555-555-5555</p>
+                    <p>test@test.com</p>
+                </div>
+            </div>
+           <div class="items col-xs-12 clearfix">
+               <div class="info-block block-info clearfix">
+                    <div class="square-box pull-left">
+                        <span class="glyphicon glyphicon-user glyphicon-lg"></span>
+                    </div>
+                  
+                    <h4>Brenda Tree</h4>
+                    <p>555-555-5555</p>
+                    <p>test@test.com</p>
+                </div>
+            </div>
+            <div class="items col-xs-12 clearfix">
+               <div class="info-block block-info clearfix">
+                    <div class="square-box pull-left">
+                        <span class="glyphicon glyphicon-user glyphicon-lg"></span>
+                    </div>
+                 
+                    <h4>Glenn Pho shizzle</h4>
+                    <p>555-555-5555</p>
+                    <p>test@test.com</p>
+                </div>
+            </div>
+            <div class="items col-xs-12 clearfix">
+               <div class="info-block block-info clearfix">
+                    <div class="square-box pull-left">
+                        <span class="glyphicon glyphicon-user glyphicon-lg"></span>
+                    </div>
+                
+                    <h4>Brian Hoyies</h4>
+                   
+                    <p>555-555-5555</p>
+                    <p>test@test.com</p>
+                </div>
+            </div>
+             <div class="items col-xs-12 clearfix">
+               <div class="info-block block-info clearfix">
+                    <div class="square-box pull-left">
+                        <span class="glyphicon glyphicon-user glyphicon-lg"></span>
+                    </div>
+                   
+                    <h4>Tyreese Burn</h4>
+                 <p>555-555-5555</p>
+                    <p>test@test.com</p>
+                </div>
+            </div>
+           <div class="items col-xs-12 clearfix">
+               <div class="info-block block-info clearfix">
+                    <div class="square-box pull-left">
+                        <span class="glyphicon glyphicon-user glyphicon-lg"></span>
+                    </div>
+                  
+                    <h4>Brenda Tree</h4>
+                    <p>555-555-5555</p>
+                    <p>test@test.com</p>
+                </div>
+            </div>
+            <div class="items col-xs-12 clearfix">
+               <div class="info-block block-info clearfix">
+                    <div class="square-box pull-left">
+                        <span class="glyphicon glyphicon-user glyphicon-lg"></span>
+                    </div>
+                 
+                    <h4>Glenn Pho shizzle</h4>
+                    <p>555-555-5555</p>
+                    <p>test@test.com</p>
+                </div>
+            </div>
+            <div class="items col-xs-12 clearfix">
+               <div class="info-block block-info clearfix">
+                    <div class="square-box pull-left">
+                        <span class="glyphicon glyphicon-user glyphicon-lg"></span>
+                    </div>
+                
+                    <h4>Brian Hoyies</h4>
+                   
+                    <p>555-555-5555</p>
+                    <p>test@test.com</p>
+                </div>
+            </div>
+        </div>
+	</div>
+     </div>
+	
 </div>
 
+    <!-- Core JavaScript Files -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
 
-  <footer id="contact" class="page-footer default_color scrollspy">
-    <div class="container">  
- <div class="row">
+    <script>
+        $(function () {
+            $('#input-search').on('keyup', function () {
+                var rex = new RegExp($(this).val(), 'i');
+                $('.searchable-container .items').hide();
+                $('.searchable-container .items').filter(function () {
+                    return rex.test($(this).text());
+                }).show();
+            });
+        });
+    </script>
 
-        <div class="col l6 s12">
-          <h5 class="white-text">Bio</h5>
-          <p class="grey-text text-lighten-4">
-            We are a team of college students working on this project like it's our full time job. 
-            Any amount would help support and continue development on this project and is greatly appreciated.</p>
+</body>
 
-
-        </div>
-        <div class="col l3 s12">
-          <h5 class="white-text">andreagalanti.it</h5>
-          <ul>
-            <li><a class="white-text" href="http://www.andreagalanti.it/">Home</a></li>
-            <li><a class="white-text" href="http://www.andreagalanti.it/lab">Lab</a></li>
-            <li><a class="white-text" href="http://www.andreagalanti.it/portfolio">Work</a></li>
-            <li><a class="white-text" href="http://www.andreagalanti.it/">Contact</a></li>
-            
-          </ul>
-        </div>
-        <div class="col l3 s12">
-          <h5 class="white-text">Social</h5>
-          <ul>
-            <li><a class="white-text" href="https://dribbble.com/andreagalanti">Dribbble</a></li>
-            <li><a class="white-text" href="https://www.facebook.com/andreagalantiwebdesign">Facebook</a></li>
-            <li><a class="white-text" href="https://twitter.com/GalantiAndrea">Twitter</a></li>
-            <li><a class="white-text" href="https://plus.google.com/u/0/+AndreaGalantiandreagalanti">Google+</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="footer-copyright default_color">
-      <div class="container">
-      Made by <a class="white-text" href="http://www.andreagalanti.it">Andrea Galanti</a>
-      </div>
-    </div>
-  </footer>
-
-
-  <!--  Scripts-->
-  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-  <script src="js/materialize.js"></script>
-  <script src="js/init.js"></script>
-
-  </body>
 </html>
