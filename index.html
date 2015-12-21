@@ -1,218 +1,394 @@
-<!DOCTYPE html>
-<html lang="en">
-
+﻿<!DOCTYPE html>
+<html>
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+  <title>Material Base Theme</title>
 
-    <title>SSM</title>
+  <!-- CSS  -->
+  <link href="css/materialize.css" type="text/css" rel="stylesheet">
+  <link href="css/style.css" type="text/css" rel="stylesheet" >
+  <script src="js/modernizr.js"></script> <!-- Modernizr -->
 
-    <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
-
-    <!-- Fonts -->
-    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="css/animate.css" rel="stylesheet" />
-
-    <style>
-    .glyphicon-lg
-{
-    font-size:35px
-}
-.info-block
-{
-    border-right:2px solid #E6E6E6;margin-bottom:25px
-}
-.info-block .square-box
-{
-    width:75px;min-height:75px;margin-right:10px;text-align:center!important;background-color:#676767;padding:10px 0
-}
-.info-block.block-info
-{
-    border-color:#20819e
-}
-.info-block.block-info .square-box
-{
-    background-color:#20819e;color:#FFF
-}
-        p {
-            margin:0px;
-        }
-        h4 {
-            margin-top:4px;
-            margin-bottom:4px;
-        }
-        .searchable-container {
-
-            margin-top:12px;
-        }
-        header {
-
-            background:#20819e;
-            color:#fff;
-            margin-bottom:30px;
-        }
-
-        .navbar-brand {
-            color:#fff;
-        }
-    </style>
-    <!-- Squad theme CSS -->
-  
-   
+    <link href="css/bootstrap.css" rel="stylesheet" />
+    <link href="css/bootstrap-theme.css" rel="stylesheet" />
+    <script src="lib/angular.js"></script>
+    <script src="lib/jquery-1.11.1.js"></script>
+    <script src="lib/bootstrap.js"></script>
+    <script src="js/materialize.js"></script>
+    <script src="js/init.js"></script>
 </head>
+<body id="top" class="scrollspy">
 
-<body >
-
-
-    <header class="navbar navbar-static-top bs-docs-nav" id="top" role="banner">
-  <div class="container">
-    <div class="navbar-header">
-      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a href="../" class="navbar-brand">Soni matrimonial</a>
-    </div>
-    
-  </div>
-</header>
-
-
-
-
+<!-- Pre Loader -->
+<div id="loader-wrapper">
+    <div id="loader"></div>
  
-
-
- <div class="container">
-
-        <h3>Welcome User !!</h3>
-     <div class="well">
-         <div class="row">
-	
-        <div style="margin-bottom:10px;" class="col-md-12">
-            <input type="search" class="form-control" id="input-search" placeholder="Search User..." >
-        </div>
-
-          
-           
-        <div class="searchable-container">
-            <div class="items col-xs-12 clearfix">
-               <div class="info-block block-info clearfix">
-                    <div class="square-box pull-left">
-                        <span class="glyphicon glyphicon-user glyphicon-lg"></span>
-                    </div>
-                   
-                    <h4>Tyreese Burn</h4>
-                 <p>555-555-5555</p>
-                    <p>test@test.com</p>
-                </div>
-            </div>
-           <div class="items col-xs-12 clearfix">
-               <div class="info-block block-info clearfix">
-                    <div class="square-box pull-left">
-                        <span class="glyphicon glyphicon-user glyphicon-lg"></span>
-                    </div>
-                  
-                    <h4>Brenda Tree</h4>
-                    <p>555-555-5555</p>
-                    <p>test@test.com</p>
-                </div>
-            </div>
-            <div class="items col-xs-12 clearfix">
-               <div class="info-block block-info clearfix">
-                    <div class="square-box pull-left">
-                        <span class="glyphicon glyphicon-user glyphicon-lg"></span>
-                    </div>
-                 
-                    <h4>Glenn Pho shizzle</h4>
-                    <p>555-555-5555</p>
-                    <p>test@test.com</p>
-                </div>
-            </div>
-            <div class="items col-xs-12 clearfix">
-               <div class="info-block block-info clearfix">
-                    <div class="square-box pull-left">
-                        <span class="glyphicon glyphicon-user glyphicon-lg"></span>
-                    </div>
-                
-                    <h4>Brian Hoyies</h4>
-                   
-                    <p>555-555-5555</p>
-                    <p>test@test.com</p>
-                </div>
-            </div>
-             <div class="items col-xs-12 clearfix">
-               <div class="info-block block-info clearfix">
-                    <div class="square-box pull-left">
-                        <span class="glyphicon glyphicon-user glyphicon-lg"></span>
-                    </div>
-                   
-                    <h4>Tyreese Burn</h4>
-                 <p>555-555-5555</p>
-                    <p>test@test.com</p>
-                </div>
-            </div>
-           <div class="items col-xs-12 clearfix">
-               <div class="info-block block-info clearfix">
-                    <div class="square-box pull-left">
-                        <span class="glyphicon glyphicon-user glyphicon-lg"></span>
-                    </div>
-                  
-                    <h4>Brenda Tree</h4>
-                    <p>555-555-5555</p>
-                    <p>test@test.com</p>
-                </div>
-            </div>
-            <div class="items col-xs-12 clearfix">
-               <div class="info-block block-info clearfix">
-                    <div class="square-box pull-left">
-                        <span class="glyphicon glyphicon-user glyphicon-lg"></span>
-                    </div>
-                 
-                    <h4>Glenn Pho shizzle</h4>
-                    <p>555-555-5555</p>
-                    <p>test@test.com</p>
-                </div>
-            </div>
-            <div class="items col-xs-12 clearfix">
-               <div class="info-block block-info clearfix">
-                    <div class="square-box pull-left">
-                        <span class="glyphicon glyphicon-user glyphicon-lg"></span>
-                    </div>
-                
-                    <h4>Brian Hoyies</h4>
-                   
-                    <p>555-555-5555</p>
-                    <p>test@test.com</p>
-                </div>
-            </div>
-        </div>
-	</div>
-     </div>
-	
+    <div class="loader-section section-left"></div>
+    <div class="loader-section section-right"></div>
+ 
 </div>
 
-    <!-- Core JavaScript Files -->
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+ <div class="navbar-fixed">
+    <nav id="nav_f" class="default_color" role="navigation">
+      <div class="container">
+        <div class="nav-wrapper"><a id="logo-container" href="#top" class="brand-logo">Maidh Khsatriya</a>
+          <ul id="nav-mobile" class="right side-nav">
+            <li><a href="#intro">Users</a></li>
+            <li><a href="#work">Edit Profile</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul><a href="#" data-activates="nav-mobile" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+
+    <div class="container" style="padding-top:20px;">
+        <div ng-app="userApp" data-ng-controller="userController" class="container">
+            <div ng-show="error" class="alert alert-danger alert-dismissible" role="alert">
+                <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <p>{{ error }}</p>
+            </div>
+
+            <p><a data-ng-click="showadd()" href="javascript:;" class="btn btn-primary">Add New User</a></p>
+
+            <div  id="userModel" style="display:none" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
+                            <h4 class="modal-title" id="myModalLabel" ng-hide="editMode">Add User</h4>
+                            <h4 class="modal-title" id="myModalLabel" ng-show="editMode">Edit User</h4>
+                        </div>
+                        <div class="modal-body">
+                            <form class="form-horizontal" role="form" name="adduserform">
+                                <div class="form-group">
+                                    <label for="title" class="col-sm-2 control-label">Name</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" data-ng-model="user.Name" class="form-control" id="title" placeholder="Your Name" required title="Enter your name" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="title" class="col-sm-2 control-label">Email</label>
+                                    <div class="col-sm-10">
+                                        <input type="email" data-ng-model="user.Email" class="form-control" id="title" placeholder="Your Email" required title="Enter your email" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="title" class="col-sm-2 control-label">Address</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" data-ng-model="user.Address" class="form-control" id="title" placeholder="Your Address" required title="Enter your address" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="title" class="col-sm-2 control-label">ContactNo</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" data-ng-model="user.ContactNo" class="form-control" id="title" placeholder="Your ContactNo" required title="Enter your contactno" />
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="title" class="col-sm-2 control-label">User Name</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" data-ng-model="user.UserName" class="form-control" id="title" placeholder="Your User Name" required title="Enter your user name" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="title" class="col-sm-2 control-label">Password</label>
+                                    <div class="col-sm-10">
+                                        <input type="password" data-ng-model="user.Password" class="form-control" id="title" placeholder="Your Password" required title="Enter your password" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="title" class="col-sm-2 control-label">City</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" data-ng-model="user.City" class="form-control" id="title" placeholder="Your City" required title="Enter your city" />
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="title" class="col-sm-2 control-label">Caste</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" data-ng-model="user.Caste" class="form-control" id="title" placeholder="Your caste" required title="Enter your caste" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-offset-2 col-sm-10">
+                                        <span data-ng-hide="editMode">
+                                            <input type="submit" value="Add" ng-disabled="adduserform.$invalid" data-ng-click="add()" class="btn btn-primary" />
+                                        </span>
+                                        <span data-ng-show="editMode">
+                                            <input type="submit" value="Update" ng-disabled="adduserform.$invalid" data-ng-click="update()" class="btn btn-primary" />
+                                        </span>
+                                        <input type="button" value="Cancel" data-ng-click="cancel()" class="btn btn-primary" />
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <ul class="list-group">
+                <li data-ng-repeat="user in users" class="list-group-item">{{ user.Name }} <br/> <a data-ng-click="get(user)" href="javascript:;">View</a> |
+<a data-ng-click="edit(user)" href="javascript:;">Edit</a> |
+<a data-ng-click="showconfirm(user)" href="javascript:;">Delete</a></li>
+
+            </ul>
+            <!--<table class="table table-hover">
+                <tr>
+                    <th>User ID</th>
+                    <td>Name</td>
+                    <th>Address</th>
+                    <th>Contact No</th>
+                    <td>Caste</td>
+                    <th>City</th>
+                    <th>User Name</th>
+                    <th></th>
+                </tr>
+
+                <tr data-ng-repeat="user in users">
+                    <td><strong>{{ user.UserId }}</strong></td>
+                    <td>
+                        <p>{{ user.Name }}</p>
+
+                    </td>
+                    <td>
+                        <p>{{ user.Address }}</p>
+
+                    </td>
+                    <td>
+                        <p>{{ user.ContactNo }}</p>
+
+                    </td>
+
+                    <td>
+                        <p>{{ user.Caste }}</p>
+
+                    </td>
+                    <td>
+                        <p>{{ user.City }}</p>
+
+                    </td>
+
+                    <td>
+                        <p>{{ user.UserName }}</p>
+
+                    </td>
+                    <td>
+                        <p>
+                            <a data-ng-click="get(user)" href="javascript:;">View</a> |
+                            <a data-ng-click="edit(user)" href="javascript:;">Edit</a> |
+                            <a data-ng-click="showconfirm(user)" href="javascript:;">Delete</a>
+                        </p>
+
+                    </td>
+                </tr>
+            </table>-->
+            <hr />
+
+            <div class="modal fade" id="viewModal" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
+                            <h4 class="modal-title" id="myModalLabel">View User</h4>
+                        </div>
+                        <div class="modal-body">
+                            <form class="form-horizontal" role="form" name="viewuser">
+                                <div class="form-group">
+                                    <label for="Name" class="col-sm-2 control-label">Name</label>
+                                    <div class="col-sm-10">
+                                        {{user.Name}}
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="Address" class="col-sm-2 control-label">Address</label>
+                                    <div class="col-sm-10">
+                                        {{user.Address}}
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="ContactNo" class="col-sm-2 control-label">ContactNo</label>
+                                    <div class="col-sm-10">
+                                        {{user.ContactNo}}
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
+                            <h4 class="modal-title" id="myModalLabel">Confirm Action</h4>
+                        </div>
+                        <div class="modal-body">
+                            Are you sure to delete?
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-ng-click="delete()">Ok</button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+       
+
+        
+    </div>
+
+  
 
     <script>
-        $(function () {
-            $('#input-search').on('keyup', function () {
-                var rex = new RegExp($(this).val(), 'i');
-                $('.searchable-container .items').hide();
-                $('.searchable-container .items').filter(function () {
-                    return rex.test($(this).text());
-                }).show();
-            });
+        var app = angular.module('userApp', []);
+        var baseAddress = 'http://www.maidhkshatriya.com/api/UserService/';
+        var url = "";
+
+        app.factory('userFactory', function ($http) {
+            return {
+                getUsersList: function () {
+                    url = baseAddress + "GetUsersList";
+                    return $http.get(url);
+                },
+                getUser: function (user) {
+                    url = baseAddress + "GetUser/" + user.UserId;
+                    return $http.get(url);
+                },
+                addUser: function (user) {
+                    url = baseAddress + "AddUser";
+                    return $http.post(url, user);
+                },
+                deleteUser: function (user) {
+                    url = baseAddress + "DeleteUser/" + user.UserId;
+                    return $http.delete(url);
+                },
+                updateUser: function (user) {
+                    url = baseAddress + "ModifyUser/" + user.UserId;
+                    return $http.put(url, user);
+                }
+            };
+        });
+
+        app.controller('userController', function PostController($scope, userFactory) {
+            $scope.users = [];
+            $scope.user = null;
+            $scope.editMode = false;
+
+            //get User
+            $scope.get = function () {
+                $scope.user = this.user;
+                $('#viewModal').modal('show');
+            };
+
+            //get all Users
+            $scope.getAll = function () {
+                userFactory.getUsersList().success(function (data) {
+                    $scope.users = data;
+                }).error(function (data) {
+                    $scope.error = "An Error has occured while Loading users! " + data.ExceptionMessage;
+                });
+            };
+
+            // add User
+            $scope.add = function () {
+                var currentUser = this.user;
+                if (currentUser != null && currentUser.Name != null && currentUser.Address && currentUser.ContactNo!=null && currentUser.UserName != null && currentUser.Caste!=null && currentUser.City!=null) {
+                    userFactory.addUser(currentUser).success(function (data) {
+                        $scope.addMode = false;
+                        currentUser.UserId = data;
+                        $scope.users.push(currentUser);
+
+                        //reset form
+                        $scope.user = null;
+                        // $scope.adduserform.$setPristine(); //for form reset
+
+                        //  $('#userModel').modal('hide');
+                        $('#userModel').hide("slow");
+                    }).error(function (data) {
+                        $scope.error = "An Error has occured while Adding user! " + data.ExceptionMessage;
+                    });
+                }
+            };
+
+            //edit user
+            $scope.edit = function () {
+                $scope.user = this.user;
+                $scope.editMode = true;
+              //  $('#userModel').modal('show');
+                $('#userModel').show("slow");
+            };
+
+            //update user
+            $scope.update = function () {
+                var currentUser = this.user;
+                userFactory.updateUser(currentUser).success(function (data) {
+                    currentUser.editMode = false;
+
+                    //$('#userModel').modal('hide');
+                    $('#userModel').hide("slow");
+                }).error(function (data) {
+                    $scope.error = "An Error has occured while Updating user! " + data.ExceptionMessage;
+                });
+            };
+
+            // delete User
+            $scope.delete = function () {
+                currentUser = $scope.user;
+                userFactory.deleteUser(currentUser).success(function (data) {
+                    $('#confirmModal').modal('hide');
+                    $scope.users.pop(currentUser);
+
+                }).error(function (data) {
+                    $scope.error = "An Error has occured while Deleting user! " + data.ExceptionMessage;
+
+                    $('#confirmModal').modal('hide');
+                });
+            };
+
+            //Model popup events
+            $scope.showadd = function () {
+                $scope.user = null;
+                $scope.editMode = false;
+             //   $('#userModel').modal('show');
+                $('#userModel').show("slow");
+            };
+
+            $scope.showedit = function () {
+              //  $('#userModel').modal('show');
+                $('#userModel').show("slow");
+            };
+
+            $scope.showconfirm = function (data) {
+                $scope.user = data;
+              //  $('#confirmModal').modal('show');
+                $('#userModel').show("slow");
+            };
+
+            $scope.cancel = function () {
+                $scope.user = null;
+              //  $('#userModel').modal('hide');
+                $('#userModel').hide("slow");
+            }
+
+            // initialize your users data
+            $scope.getAll();
+
         });
     </script>
+  <!--  Scripts-->
 
-</body>
 
+  </body>
 </html>

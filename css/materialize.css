@@ -4991,7 +4991,7 @@ nav {
     position: absolute;
     color: #fff;
     display: inline-block;
-    font-size: 2.1rem;
+    font-size: 15px;
     padding: 0; }
     @media only screen and (max-width : 992px) {
       nav .brand-logo {
@@ -5754,7 +5754,7 @@ ul.tabs li.tab {
 a.waves-effect .waves-ripple {
   z-index: -1; }
 
-.modal {
+ /*.modal{
   display: none;
   position: fixed;
   background-color: #eee;
@@ -5775,7 +5775,7 @@ a.waves-effect .waves-ripple {
   -ms-transform: translate(0);
   -o-transform: translate(0);
   transform: translate(0);
-  will-change: top, opacity; }
+  will-change: top, opacity; }*/
   @media only screen and (max-width : 992px) {
     .modal {
       max-width: 80%; } }
@@ -5915,9 +5915,7 @@ button:focus {
   outline: none;
   background-color: #51adf6; }
 
-label {
-  font-size: 0.8rem;
-  color: #9e9e9e; }
+
 
 /***************************
    Text Inputs + Textarea

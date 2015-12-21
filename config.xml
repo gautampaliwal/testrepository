@@ -3,14 +3,14 @@
 <!-- config.xml reference: https://build.phonegap.com/docs/config-xml -->
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"   
-        id        = "com.phonegap.Maidhkhsatriya"
+        id        = "com.phonegap.VoltaappNew"
         versionCode = "3" 
         version   = "3.0.2">
  
-  <name>MaidhKshtriya app</name>
+  <name>Volta APP</name>
 
   <description>
-    MaidhKshtriya app.
+    Volta APP by SHIVAM ITCS.
   </description>
 
   <author href="http://phonegap.com" email="support@phonegap.com">
