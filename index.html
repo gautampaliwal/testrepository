@@ -52,7 +52,24 @@
             </div>
 
             <p><a data-ng-click="showadd()" href="javascript:;" class="btn btn-primary">Add New User</a></p>
+            <div id="photoupload"  style="display:none;">
+               <form enctype="multipart/form-data" method="post" novalidate="novalidate">
 
+                   <fieldset>
+                       <legend>Upload Form</legend>
+                       <ol>
+                           <input type="hidden" id="UserID" name="UserID" data-ng-model="user.UserId" value="{{user.UserId}}" />
+                           <li>
+                               <label>Upload </label>
+                               <input type="file" style="width:317px" name="fileUpload" id="fileUpload">
+                           </li>
+                           <li>
+                               <input type="submit" value="Upload" data-ng-click="upload()" class="btn btn-primary" id="ajaxUploadButton" class="btn">
+                           </li>
+                       </ol>
+                   </fieldset>
+               </form>
+           </div>
             <div  id="userModel" style="display:none" tabindex="-1" role="dialog" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
@@ -131,7 +148,7 @@
             </div>
 
             <ul class="list-group">
-                <li data-ng-repeat="user in users" class="list-group-item">{{ user.Name }} <br/> <a data-ng-click="get(user)" href="javascript:;">View</a> |
+                <li data-ng-repeat="user in users" class="list-group-item"> <img src="http://www.maidhkshatriya.com/UploadedFiles/{{user.ImagePath}}" style="height:50px;width:50px;border-radius:100%" ng-if="user.ImagePath!=null"  /><img style="height:50px;width:50px;border-radius:100%" src="http://www.maidhkshatriya.com/UploadedFiles/DummyImage.png" ng-if="user.ImagePath==null || user.ImagePath==''"  /> {{ user.Name }}  <br/> <a data-ng-click="editImage(user)" href="javascript:;">Image</a>|<a data-ng-click="get(user)" href="javascript:;">View</a> |
 <a data-ng-click="edit(user)" href="javascript:;">Edit</a> |
 <a data-ng-click="showconfirm(user)" href="javascript:;">Delete</a></li>
 
@@ -342,6 +359,60 @@
                     $scope.error = "An Error has occured while Updating user! " + data.ExceptionMessage;
                 });
             };
+
+
+            $scope.editImage = function () {
+                $scope.user = this.user;
+                $('#photoupload').show();
+            };
+
+            $scope.upload = function () {
+
+                debugger;
+                var data = new FormData();
+                var files = $("#fileUpload").get(0).files;
+                data.append("UserID", $("#UserID").val());
+                // Add the uploaded image content to the form data collection
+                if (files.length > 0) {
+                    data.append("UploadedImage", files[0]);
+                }
+
+                // Make Ajax request with the contentType = false, and procesDate = false
+                var ajaxRequest = $.ajax({
+                    type: "POST",
+                    url: "http://www.maidhkshatriya.com/api/fileupload/uploadfile",
+                    contentType: false,
+                    processData: false,
+                    data: data
+                });
+
+
+                ajaxRequest.done(function (responseData, textStatus) {
+                    if (textStatus == 'success') {
+                        if (responseData != null) {
+                            if (responseData.Key) {
+                                $("#fileUpload").val('');
+                                $('#photoupload').hide();
+                                alert(responseData.Value);
+                                $scope.getAll();
+                             
+                            } else {
+                                alert(responseData.Value);
+                            }
+                        }
+                    } else {
+                        alert(responseData.Value);
+                    }
+                });
+
+
+                //userFactory.uploadImage().success(function (data) {
+
+                //    $('#photoupload').modal('hide');
+                //}).error(function (data) {
+                //    $scope.error = "An Error has occured while Updating user image! " + data.ExceptionMessage;
+                //});
+            }
 
             // delete User
             $scope.delete = function () {
