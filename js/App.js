@@ -143,7 +143,7 @@ $scope.$apply();
 
 if ($localStorage.CurrentUser != null && $localStorage.CurrentUser != undefined) {
     $scope.LogUser.UserName = $localStorage.CurrentUser.UserName;
-    $scope.LogUser.UserName = $localStorage.CurrentUser.Password;
+    $scope.LogUser.PassWord = $localStorage.CurrentUser.Password;
     $scope.LoginUser($scope.LogUser);
 }
    
