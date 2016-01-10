@@ -7,10 +7,10 @@
         versionCode = "3" 
         version   = "3.0.2">
  
-  <name>maidhkshatriya APP</name>
+  <name>Volta APP</name>
 
   <description>
-    maidhkshatriya
+    Volta APP by SHIVAM ITCS.
   </description>
 
   <author href="http://phonegap.com" email="support@phonegap.com">
@@ -59,7 +59,7 @@
   <!-- Plugins -->
 
 
-  <!-- Core plugins-->
+  <!-- Core plugins
     <gap:plugin name="org.apache.cordova.battery-status" />
     <gap:plugin name="org.apache.cordova.camera" />
     <gap:plugin name="org.apache.cordova.media-capture" />
@@ -74,7 +74,7 @@
     <gap:plugin name="org.apache.cordova.geolocation" />
     <gap:plugin name="org.apache.cordova.globalization" />
     <gap:plugin name="org.apache.cordova.inappbrowser" />
-    <gap:plugin name="org.apache.cordova.media" />
+    <gap:plugin name="org.apache.cordova.media" />-->
   <gap:plugin name="org.apache.cordova.device" />
   <gap:plugin name="org.apache.cordova.device-motion" />
   <gap:plugin name="org.apache.cordova.dialogs" />

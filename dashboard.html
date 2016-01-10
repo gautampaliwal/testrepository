@@ -1,0 +1,231 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no" />
+    <title>Maidhkshatria</title>
+
+    <!-- CSS  -->
+
+
+    <link href="css/bootstrap.css" rel="stylesheet" />
+
+    <link href="css/swarnkar.css" rel="stylesheet" />
+     <link href="https://fortawesome.github.io/Font-Awesome/assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+
+    <script src="lib/angular.js"></script>
+    <script src="js/ngStorage.min.js"></script>
+    <script src="lib/jquery-1.11.1.js"></script>
+    <script src="lib/bootstrap.js"></script>
+    <script src="js/App.js"></script>
+
+</head>
+<body id="top" class="scrollspy" ng-app="userApp" data-ng-controller="userController">
+
+    <!-- Pre Loader -->
+    <div id="loader-wrapper">
+        <div id="loader"></div>
+
+        <div class="loader-section section-left"></div>
+        <div class="loader-section section-right"></div>
+
+    </div>
+
+
+    <header class="header">
+       <div class="row">
+            <div class="col-xs-6">
+                <h4><i class="fa fa-th-list" ></i> Swarnkar</h4>
+
+            </div>
+            <div class="col-xs-6">
+                <div style="margin-top:5px;" class="pull-right">
+                   
+                </div>
+                <div class="dropdown">
+                    <span class="dropdown-toggle" data-toggle="dropdown">
+                      <img src="http://www.maidhkshatriya.com/UploadedFiles/DummyImage.png" style="height:35px; width:35px;">
+                        <span class="caret"></span>
+                    </span>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Edit profile</a></li>
+                        <li><a href="#">Manage Image</a></li> 
+                        <li><a ng-click="LogOut()">Log out</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </header>
+
+
+
+    <div style="padding-top: 32px;">
+
+        <div  class="infosec row">
+            <div class="center col-xs-6">
+                <h1>49</h1>
+                <a style="margin-top:0px;" class="btn btn-login"  href="#"><i class="fa fa-male"></i>&nbsp;Male</a>
+            </div>
+
+            <div class="center col-xs-6">
+                <h1>200</h1>
+                <a style="margin-top:0px;" class="btn btn-login"  href="#"><i class="fa fa-female"></i>&nbsp;Female</a>
+            </div>
+        </div>
+        <div  >
+
+            <div class="listview">
+                <div class="list-group">
+                <div data-ng-repeat="user in users" class="list-group-item">
+                    <div class="row-picture templateimage" style="">
+                        <img class="circle" alt="image.jpg" title="image.jpg" src="http://www.maidhkshatriya.com/UploadedFiles/{{user.ImagePath}}" ng-if="user.ImagePath!=null">
+                          <img class="circle" src="http://www.maidhkshatriya.com/UploadedFiles/DummyImage.png" ng-if="user.ImagePath==null || user.ImagePath==''" />
+                    </div>
+                  
+                    <div class="row-content">
+                        <div data-ng-click="get(user)" style="cursor: pointer; color: #000">
+                            <h5 class="list-group-item-heading">{{ user.Name }}<span class="pull-right">27 Yr</span></h5>
+                            <p class="list-group-item-text"> {{ user.Email }} <span class="pull-right">Married</span></p>
+                            <p class="list-group-item-text text"> {{ user.ContactNo }}</p>
+                       
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            </div>
+
+            <div style="display:none;" class="detailview">
+               
+                <div class="row">
+                    <div class="col-md-12">
+
+                        <a style="background:#ccc; color:#333 !important;" data-ng-click="back()" class="btn btn-login"  href="#"><i class="fa fa-arrow-circle-left"></i>&nbsp;Back to List</a>
+                        <div style="background:#9c9c9c;" class="center">
+                      <img style="width:100%; max-height:250px; max-width:350px;" class="circle" alt="image.jpg" title="image.jpg" src="http://www.maidhkshatriya.com/UploadedFiles/{{user.ImagePath}}" ng-if="user.ImagePath!=null">
+                     <img style="width:100%; max-height:250px; max-width:350px;" src="http://www.maidhkshatriya.com/UploadedFiles/DummyImage.png" ng-if="user.ImagePath==null || user.ImagePath==''" />
+                    </div>
+                        </div>
+                </div>
+                   <a style="margin-top:0px;" class="btn btn-login" href="#">{{user.Name}} - 27 Yr</a>
+
+                <div class="container">
+                    <br />
+                    
+                       <p><b>Last online today</b></p>
+                <div class="row">
+                    <div class="col-xs-6"> <p> {{user.Address}} </p> </div>
+                     <div class="col-xs-6"> <p> {{user.ContactNo}} </p></div>
+                </div>
+
+                    <div class="row">
+                    <div class="col-xs-6"> <p> {{user.Email}} </p> </div>
+                     <div class="col-xs-6"> <p> 27 years 5'7' </p></div>
+                </div>
+
+                    <div class="row">
+                    <div class="col-xs-6"> <p> Married </p> </div>
+                     <div class="col-xs-6"> <p> MBA/Btech </p></div>
+                </div>
+                    <p>Some notes goes here Some notes goes here Some notes goes here </p>
+                </div>
+             
+
+
+
+               
+                       
+            </div>
+
+            
+
+
+        </div>
+
+
+
+
+
+    </div>
+
+
+
+    <!--<script>
+        var app = angular.module('userApp', []);
+        var baseAddress = 'http://www.maidhkshatriya.com/api/UserService/';
+        var url = "";
+
+        app.factory('userFactory', function ($http) {
+            return {
+                getUsersList: function () {
+                    url = baseAddress + "GetUsersList";
+                    return $http.get(url);
+                },
+                getUser: function (user) {
+                    alert("in");
+                    debugger;
+                    url = baseAddress + "GetUser/" + user.UserId;
+                    return $http.get(url);
+                },
+                addUser: function (user) {
+                    url = baseAddress + "AddUser";
+                    return $http.post(url, user);
+                },
+                deleteUser: function (user) {
+                    url = baseAddress + "DeleteUser/" + user.UserId;
+                    return $http.delete(url);
+                },
+                updateUser: function (user) {
+                    url = baseAddress + "ModifyUser/" + user.UserId;
+                    return $http.put(url, user);
+                }
+            };
+        });
+
+        app.controller('userController', function PostController($scope, userFactory) {
+            $scope.users = [];
+            $scope.user = null;
+            $scope.editMode = false;
+
+            //get User
+            $scope.get = function () {
+
+                alert("in");
+                debugger;
+                $scope.user = this.user;
+                $('.listview').hide();
+                $('.infosec').hide();
+                $('.detailview').show();
+            };
+
+            //get all Users
+            $scope.getAll = function () {
+                userFactory.getUsersList().success(function (data) {
+                    $scope.users = data;
+                }).error(function (data) {
+                    $scope.error = "An Error has occured while Loading users! " + data.ExceptionMessage;
+                });
+            };
+
+            $scope.back = function ()
+            {
+            $('.detailview').hide();
+            $('.listview').show();
+            $('.infosec').show();
+              
+            };
+
+
+
+
+
+            $scope.getAll();
+
+        });
+    </script>-->
+    <!--  Scripts-->
+
+
+</body>
+</html>

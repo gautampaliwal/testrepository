@@ -1,76 +1,91 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
-  <title>Material Base Theme</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no" />
+    <title>Maidhkshatria</title>
 
-  <!-- CSS  -->
-  <link href="css/materialize.css" type="text/css" rel="stylesheet">
-  <link href="css/style.css" type="text/css" rel="stylesheet" >
-  <script src="js/modernizr.js"></script> <!-- Modernizr -->
+    <!-- CSS  -->
+
+
 
     <link href="css/bootstrap.css" rel="stylesheet" />
-    <link href="css/bootstrap-theme.css" rel="stylesheet" />
+
+       <link href="css/swarnkar.css" rel="stylesheet" />
+
+     <link href="https://fortawesome.github.io/Font-Awesome/assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+
+    
+
+
     <script src="lib/angular.js"></script>
+    <script src="js/ngStorage.min.js"></script>
     <script src="lib/jquery-1.11.1.js"></script>
     <script src="lib/bootstrap.js"></script>
-    <script src="js/materialize.js"></script>
-    <script src="js/init.js"></script>
+    <script src="js/App.js"></script>
+
 </head>
-<body id="top" class="scrollspy">
+<body>
 
-<!-- Pre Loader -->
-<div id="loader-wrapper">
-    <div id="loader"></div>
- 
-    <div class="loader-section section-left"></div>
-    <div class="loader-section section-right"></div>
- 
-</div>
+    <!-- Pre Loader -->
 
- <div class="navbar-fixed">
-    <nav id="nav_f" class="default_color" role="navigation">
-      <div class="container">
-        <div class="nav-wrapper"><a id="logo-container" href="#top" class="brand-logo">Maidh Khsatriya</a>
-          <ul id="nav-mobile" class="right side-nav">
-            <li><a href="#intro">Users</a></li>
-            <li><a href="#work">Edit Profile</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul><a href="#" data-activates="nav-mobile" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+
+    
+
+
+    <div class="login" ng-app="userApp" data-ng-controller="LoginController">
+
+        <div class="center">
+            <h3>Swarnkar</h3>
         </div>
-      </div>
-    </nav>
-  </div>
+
+        <div class="col-md-12">
 
 
-    <div class="container" style="padding-top:20px;">
-        <div ng-app="userApp" data-ng-controller="userController" class="container">
-            <div ng-show="error" class="alert alert-danger alert-dismissible" role="alert">
-                <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                <p>{{ error }}</p>
-            </div>
+            <div id="LoginModel" ng-if="IsLoginFormOn==true">
 
-            <p><a data-ng-click="showadd()" href="javascript:;" class="btn btn-primary">Add New User</a></p>
-            <div id="photoupload"  style="display:none;">
-               <form enctype="multipart/form-data" method="post" novalidate="novalidate">
+                <div ng-show="IsErrorMessageOn" class="alert alert-danger alert-dismissible" role="alert">
+                    <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <p>{{ CurrentUser.UserName }}</p>
+                </div>
+                <div class="input-group">
+                    <span style="border-bottom:transparent;" class="input-group-addon"><i class="fa fa-user"></i></span>
+                    <input style="border-bottom:transparent;" ng-model="LogUser.UserName" id="login-username" type="text" class="form-control" name="username" value="" placeholder="username or email">
+                </div>
 
-                   <fieldset>
-                       <legend>Upload Form</legend>
-                       <ol>
-                           <input type="hidden" id="UserID" name="UserID" data-ng-model="user.UserId" value="{{user.UserId}}" />
-                           <li>
-                               <label>Upload </label>
-                               <input type="file" style="width:317px" name="fileUpload" id="fileUpload">
-                           </li>
-                           <li>
-                               <input type="submit" value="Upload" data-ng-click="upload()" class="btn btn-primary" id="ajaxUploadButton" class="btn">
-                           </li>
-                       </ol>
-                   </fieldset>
-               </form>
-           </div>
-            <div  id="userModel" style="display:none" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                    <input id="login-password" type="password" class="form-control" ng-model="LogUser.PassWord" name="password" placeholder="password">
+                </div>
+
+
+                <button ng-disabled="LogUser.UserName=='' || LogUser.PassWord==''" class="btn btn-login" type="button" ng-click="LoginUser(LogUser)" >Sign Me In</button>
+
+
+            </div> 
+
+
+
+
+
+
+
+                <div class="bottommenu">
+
+                    <div class="row">
+                        <div style="border-right:1px solid #808080;" class="col-md-6 col-xs-6">
+                            <a class="btn" ng-click="ToggleLoginRegister(true,false)"><i class="fa fa-search"></i>&nbsp;Login</a>
+                        </div>
+
+                        <div class="col-md-6 col-xs-6">
+                            <a class="btn" ng-click="ToggleLoginRegister(false,true)"><i class="fa fa-briefcase"></i>&nbsp;Register</a>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                 <div id="userModel" ng-if="IsRegisterFormOn==true" tabindex="-1" role="dialog" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -146,320 +161,14 @@
                     </div>
                 </div>
             </div>
-
-            <ul class="list-group">
-                <li data-ng-repeat="user in users" class="list-group-item"> <img src="http://www.maidhkshatriya.com/UploadedFiles/{{user.ImagePath}}" style="height:50px;width:50px;border-radius:100%" ng-if="user.ImagePath!=null"  /><img style="height:50px;width:50px;border-radius:100%" src="http://www.maidhkshatriya.com/UploadedFiles/DummyImage.png" ng-if="user.ImagePath==null || user.ImagePath==''"  /> {{ user.Name }}  <br/> <a data-ng-click="editImage(user)" href="javascript:;">Image</a>|<a data-ng-click="get(user)" href="javascript:;">View</a> |
-<a data-ng-click="edit(user)" href="javascript:;">Edit</a> |
-<a data-ng-click="showconfirm(user)" href="javascript:;">Delete</a></li>
-
-            </ul>
-            <!--<table class="table table-hover">
-                <tr>
-                    <th>User ID</th>
-                    <td>Name</td>
-                    <th>Address</th>
-                    <th>Contact No</th>
-                    <td>Caste</td>
-                    <th>City</th>
-                    <th>User Name</th>
-                    <th></th>
-                </tr>
-
-                <tr data-ng-repeat="user in users">
-                    <td><strong>{{ user.UserId }}</strong></td>
-                    <td>
-                        <p>{{ user.Name }}</p>
-
-                    </td>
-                    <td>
-                        <p>{{ user.Address }}</p>
-
-                    </td>
-                    <td>
-                        <p>{{ user.ContactNo }}</p>
-
-                    </td>
-
-                    <td>
-                        <p>{{ user.Caste }}</p>
-
-                    </td>
-                    <td>
-                        <p>{{ user.City }}</p>
-
-                    </td>
-
-                    <td>
-                        <p>{{ user.UserName }}</p>
-
-                    </td>
-                    <td>
-                        <p>
-                            <a data-ng-click="get(user)" href="javascript:;">View</a> |
-                            <a data-ng-click="edit(user)" href="javascript:;">Edit</a> |
-                            <a data-ng-click="showconfirm(user)" href="javascript:;">Delete</a>
-                        </p>
-
-                    </td>
-                </tr>
-            </table>-->
-            <hr />
-
-            <div class="modal fade" id="viewModal" tabindex="-1" role="dialog" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
-                            <h4 class="modal-title" id="myModalLabel">View User</h4>
-                        </div>
-                        <div class="modal-body">
-                            <form class="form-horizontal" role="form" name="viewuser">
-                                <div class="form-group">
-                                    <label for="Name" class="col-sm-2 control-label">Name</label>
-                                    <div class="col-sm-10">
-                                        {{user.Name}}
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="Address" class="col-sm-2 control-label">Address</label>
-                                    <div class="col-sm-10">
-                                        {{user.Address}}
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="ContactNo" class="col-sm-2 control-label">ContactNo</label>
-                                    <div class="col-sm-10">
-                                        {{user.ContactNo}}
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                        </div>
-                    </div>
-                </div>
             </div>
-
-            <div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
-                            <h4 class="modal-title" id="myModalLabel">Confirm Action</h4>
-                        </div>
-                        <div class="modal-body">
-                            Are you sure to delete?
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-ng-click="delete()">Ok</button>
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-       
-
-        
     </div>
 
-  
-
-    <script>
-        var app = angular.module('userApp', []);
-        var baseAddress = 'http://www.maidhkshatriya.com/api/UserService/';
-        var url = "";
-
-        app.factory('userFactory', function ($http) {
-            return {
-                getUsersList: function () {
-                    url = baseAddress + "GetUsersList";
-                    return $http.get(url);
-                },
-                getUser: function (user) {
-                    url = baseAddress + "GetUser/" + user.UserId;
-                    return $http.get(url);
-                },
-                addUser: function (user) {
-                    url = baseAddress + "AddUser";
-                    return $http.post(url, user);
-                },
-                deleteUser: function (user) {
-                    url = baseAddress + "DeleteUser/" + user.UserId;
-                    return $http.delete(url);
-                },
-                updateUser: function (user) {
-                    url = baseAddress + "ModifyUser/" + user.UserId;
-                    return $http.put(url, user);
-                }
-            };
-        });
-
-        app.controller('userController', function PostController($scope, userFactory) {
-            $scope.users = [];
-            $scope.user = null;
-            $scope.editMode = false;
-
-            //get User
-            $scope.get = function () {
-                $scope.user = this.user;
-                $('#viewModal').modal('show');
-            };
-
-            //get all Users
-            $scope.getAll = function () {
-                userFactory.getUsersList().success(function (data) {
-                    $scope.users = data;
-                }).error(function (data) {
-                    $scope.error = "An Error has occured while Loading users! " + data.ExceptionMessage;
-                });
-            };
-
-            // add User
-            $scope.add = function () {
-                var currentUser = this.user;
-                if (currentUser != null && currentUser.Name != null && currentUser.Address && currentUser.ContactNo!=null && currentUser.UserName != null && currentUser.Caste!=null && currentUser.City!=null) {
-                    userFactory.addUser(currentUser).success(function (data) {
-                        $scope.addMode = false;
-                        currentUser.UserId = data;
-                        $scope.users.push(currentUser);
-
-                        //reset form
-                        $scope.user = null;
-                        // $scope.adduserform.$setPristine(); //for form reset
-
-                        //  $('#userModel').modal('hide');
-                        $('#userModel').hide("slow");
-                    }).error(function (data) {
-                        $scope.error = "An Error has occured while Adding user! " + data.ExceptionMessage;
-                    });
-                }
-            };
-
-            //edit user
-            $scope.edit = function () {
-                $scope.user = this.user;
-                $scope.editMode = true;
-              //  $('#userModel').modal('show');
-                $('#userModel').show("slow");
-            };
-
-            //update user
-            $scope.update = function () {
-                var currentUser = this.user;
-                userFactory.updateUser(currentUser).success(function (data) {
-                    currentUser.editMode = false;
-
-                    //$('#userModel').modal('hide');
-                    $('#userModel').hide("slow");
-                }).error(function (data) {
-                    $scope.error = "An Error has occured while Updating user! " + data.ExceptionMessage;
-                });
-            };
 
 
-            $scope.editImage = function () {
-                $scope.user = this.user;
-                $('#photoupload').show();
-            };
 
-            $scope.upload = function () {
-
-                debugger;
-                var data = new FormData();
-                var files = $("#fileUpload").get(0).files;
-                data.append("UserID", $("#UserID").val());
-                // Add the uploaded image content to the form data collection
-                if (files.length > 0) {
-                    data.append("UploadedImage", files[0]);
-                }
-
-                // Make Ajax request with the contentType = false, and procesDate = false
-                var ajaxRequest = $.ajax({
-                    type: "POST",
-                    url: "http://www.maidhkshatriya.com/api/fileupload/uploadfile",
-                    contentType: false,
-                    processData: false,
-                    data: data
-                });
+    <!--  Scripts-->
 
 
-                ajaxRequest.done(function (responseData, textStatus) {
-                    if (textStatus == 'success') {
-                        if (responseData != null) {
-                            if (responseData.Key) {
-                                $("#fileUpload").val('');
-                                $('#photoupload').hide();
-                                alert(responseData.Value);
-                                $scope.getAll();
-                             
-                            } else {
-                                alert(responseData.Value);
-                            }
-                        }
-                    } else {
-                        alert(responseData.Value);
-                    }
-                });
-
-
-                //userFactory.uploadImage().success(function (data) {
-
-                //    $('#photoupload').modal('hide');
-                //}).error(function (data) {
-                //    $scope.error = "An Error has occured while Updating user image! " + data.ExceptionMessage;
-                //});
-            }
-
-            // delete User
-            $scope.delete = function () {
-                currentUser = $scope.user;
-                userFactory.deleteUser(currentUser).success(function (data) {
-                    $('#confirmModal').modal('hide');
-                    $scope.users.pop(currentUser);
-
-                }).error(function (data) {
-                    $scope.error = "An Error has occured while Deleting user! " + data.ExceptionMessage;
-
-                    $('#confirmModal').modal('hide');
-                });
-            };
-
-            //Model popup events
-            $scope.showadd = function () {
-                $scope.user = null;
-                $scope.editMode = false;
-             //   $('#userModel').modal('show');
-                $('#userModel').show("slow");
-            };
-
-            $scope.showedit = function () {
-              //  $('#userModel').modal('show');
-                $('#userModel').show("slow");
-            };
-
-            $scope.showconfirm = function (data) {
-                $scope.user = data;
-                $('#confirmModal').modal('show');
-               // $('#userModel').show("slow");
-            };
-
-            $scope.cancel = function () {
-                $scope.user = null;
-              //  $('#userModel').modal('hide');
-                $('#userModel').hide("slow");
-            }
-
-            // initialize your users data
-            $scope.getAll();
-
-        });
-    </script>
-  <!--  Scripts-->
-
-
-  </body>
+</body>
 </html>

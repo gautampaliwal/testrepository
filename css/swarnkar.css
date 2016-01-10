@@ -1,0 +1,149 @@
+.form-control {
+
+    height:50px;
+    border-radius:0px;
+    border-left:0;
+    border-right:0;
+}
+
+.input-group-addon {
+    width:50px;
+    border-radius:0px;
+    font-size:20px;
+    border-left:0;
+    background:#fff;
+}
+
+.input-group {
+    width:100%;
+}
+
+.center {
+
+    text-align:center;
+}
+.login h3 {
+    font-family:cursive;
+    font-size:35px;
+    color:#bb001f;
+    font-weight:700;
+    margin-bottom:40px;
+}
+
+.login {
+
+    margin-top:50px;
+}
+
+.btn-login {
+
+    margin-top:15px;
+    background:#bb001f;
+    color:#fff !important;;
+    width:100%;
+    border-radius:0px;
+    font-size:20px;
+    padding-top:8px;
+    padding-bottom:8px;
+}
+
+.bottommenu {
+    width:100%;
+    position:fixed;
+    bottom:0;
+      text-align:center;
+      left:0px;
+      right:0px;
+}
+
+    .bottommenu .col-md-6 {
+        padding-left:0px;
+        padding-right:0px;
+    }
+
+    .bottommenu .btn {
+
+        background:#ccc;
+        width:100%;
+        border-radius:0px;
+        font-size:18px;
+        color:#000;
+        padding-top:8px;
+        padding-bottom:8px;
+
+    }
+
+
+         .list-group .list-group-item .row-picture, .list-group .list-group-item .row-action-primary {
+    float: left;
+    display: inline-block;
+    padding-right: 16px;
+}
+
+        .list-group .list-group-item .row-content {
+    display: inline-block;
+    width: calc(100% - 92px);
+    min-height: 66px;
+    border-bottom:1px solid #d4d4d4;
+}
+
+        .list-group .list-group-item .row-picture img{
+    display: block;
+    width:65px;
+    height:65px;
+    border-radius:100%;
+}
+
+.header {
+   background: #bb001f;
+    color: #fff;
+    position: fixed;
+    height: 45px;
+    width: 100%;
+    z-index: 1;
+}
+
+    .header .row {
+        margin-left:0px;
+        margin-right:0px;
+    }
+
+    .header h4 {
+
+        font-size:23px;
+        white-space:nowrap;
+    }
+
+.infosec {
+    margin-left:0px;
+    margin-right:0px;
+    margin-bottom:10px;
+}
+
+    .infosec .col-xs-6 {
+        padding-left:5px;
+        padding-right:5px;
+    }
+
+    .infosec h1 {
+
+        margin-top:17px;
+        margin-bottom:0px;
+    }
+
+.list-group-item {
+    border:none !important;
+}
+
+.list-group-item-heading {
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-size: 17px;
+}
+
+body {
+
+    overflow-x:hidden;
+}
+
+   
