@@ -54,6 +54,7 @@
       text-align:center;
       left:0px;
       right:0px;
+      z-index:10;
 }
 
     .bottommenu .col-md-6 {
@@ -144,6 +145,37 @@
 body {
 
     overflow-x:hidden;
+}
+
+
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+    color: #fff;
+    cursor: default;
+    background-color: #bb001f;
+    border: 1px solid #bb001f;
+    border-bottom-color: transparent;
+}
+
+.panel-default > .panel-heading {
+    color: #333;
+    background-color: #FFFFFF;
+    border-color: #fff;
+    padding-left:0px;
+    padding-right:0px;
+}
+.nav-tabs > li > a {
+    margin-right: 2px;
+    line-height: 1.42857143;
+    background: #ccc;
+    border: 1px solid transparent;
+    border-radius: 4px 4px 0 0;
+    color: #000;
+    border-radius: 0px;
+}
+
+nav-tabs {
+    border-bottom: 1px solid #ddd;
+    background: #989898;
 }
 
    

@@ -1,0 +1,699 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no" />
+    <title>Maidhkshatria</title>
+
+    <!-- CSS  -->
+
+
+    <link href="css/bootstrap.css" rel="stylesheet" />
+
+    <link href="css/swarnkar.css" rel="stylesheet" />
+
+    <link href="https://fortawesome.github.io/Font-Awesome/assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+
+    <script src="lib/angular.js"></script>
+    <script src="js/ngStorage.min.js"></script>
+    <script src="lib/jquery-1.11.1.js"></script>
+    <script src="lib/bootstrap.js"></script>
+    <script src="js/App.js"></script>
+
+    <style>
+        #radioBtn .notActive {
+            background-color: #fff;
+            height: 50px;
+            font-size: 20px;
+            border: 1px solid #ccc;
+            width: 50%;
+            color: #000;
+            line-height: 35px;
+        }
+
+        #radioBtn .active {
+            background: #bb001f;
+            border: 1px solid #bb001f;
+            height: 50px;
+            font-size: 20px;
+            width: 50%;
+            line-height: 35px;
+        }
+
+        .register .form-control {
+            border-bottom: transparent;
+            box-shadow: none !important;
+        }
+
+        select {
+            border-bottom: transparent !important;
+            border-left: transparent !important;
+            box-shadow: none !important;
+        }
+    </style>
+
+</head>
+<body ng-app="userApp" data-ng-controller="userController">
+
+    <!-- Pre Loader -->
+
+
+
+    <form class="form-horizontal" role="form" name="adduserform" novalidate>
+
+
+        <div class="personalsection">
+
+            <div style="background: #BBBBBB; text-align: center; padding: 13px;">
+                <a style="font-size: 16px; color: #000;">Personal details</a>
+            </div>
+            <div class="col-md-12">
+
+
+                <div class="register">
+
+                    <div style="margin-bottom: 12px; display: none; margin-top: 10px;" class="input-group">
+                        <div style="width: 100%;" id="radioBtn" class="btn-group">
+                            <a class="btn btn-primary btn-sm active" data-toggle="Gender" data-title="F"><i class="fa fa-female"></i>Female</a>
+                            <a class="btn btn-primary btn-sm notActive" data-toggle="Gender" data-title="M"><i class="fa fa-male"></i>Male</a>
+                        </div>
+                        <input type="hidden" name="Gender" id="Gender">
+                    </div>
+
+                    <div class="input-group">
+                        <span style="border-bottom: transparent; border-right: transparent" class="input-group-addon"><i class="fa fa-user"></i></span>
+                        <input type="text" data-ng-model="user.Name" class="form-control" id="name" placeholder="Your Name *" required title="Enter your name" />
+
+                    </div>
+
+                    <div class="input-group">
+                        <span style="border-bottom: transparent; border-right: transparent" class="input-group-addon"><i class="fa fa-th"></i></span>
+                        <select data-ng-model="user.Gender" id="gender" class="form-control">
+                            <option value="" disabled selected>Select your Gender * </option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+
+                        </select>
+
+                    </div>
+
+                    <div class="input-group">
+                        <span style="border-bottom: transparent; border-right: transparent" class="input-group-addon"><i class="fa fa-birthday-cake"></i></span>
+                        <input type="date" data-ng-model="user.DOB" class="form-control" id="dob" placeholder="Date of birth" required title="Enter your DOB" />
+
+                    </div>
+
+                    <div class="input-group">
+                        <span style="border-bottom: transparent; border-right: transparent" class="input-group-addon"><i class="fa fa-birthday-cake"></i></span>
+                        <input type="text" data-ng-model="user.birthtime" class="form-control" placeholder="Birth time" />
+
+                    </div>
+
+                    <div class="input-group">
+                        <span style="border-bottom: transparent; border-right: transparent" class="input-group-addon"><i class="fa fa-birthday-cake"></i></span>
+                        <input type="text" data-ng-model="user.birthplace" class="form-control" placeholder="Birth Place" />
+
+                    </div>
+
+                    <div class="input-group">
+                        <span style="border-bottom: transparent; border-right: transparent" class="input-group-addon"><i class="fa fa-th"></i></span>
+                        <select data-ng-model="user.height" class="form-control">
+                            <option value="" disabled selected>Select your Height *</option>
+                            <option value="4'1''">4'1''</option>
+                            <option value="4'2''">4'2''</option>
+                            <option value="4'3''">4'3''</option>
+                            <option value="4'4''">4'4''</option>
+                            <option value="4'5''">4'5''</option>
+                            <option value="4'6''">4'6''</option>
+                            <option value="4'7''">4'7''</option>
+                            <option value="4'8''">4'8''</option>
+                            <option value="4'9''">4'9''</option>
+                            <option value="4'10''">4'10''</option>
+                            <option value="4'11''">4'11''</option>
+                            <option value="5">5</option>
+                            <option value="5'1''">5'1''</option>
+                            <option value="5'2''">5'2''</option>
+                            <option value="5'3''">5'3''</option>
+                            <option value="5'4''">5'4''</option>
+                            <option value="5'5''">5'5''</option>
+                            <option value="5'6''">5'6''</option>
+                            <option value="5'7''">5'7''</option>
+                            <option value="5'8''">5'8''</option>
+                            <option value="5'9''">5'9''</option>
+                            <option value="5'10''">5'10''</option>
+                            <option value="5'11''">5'11''</option>
+                            <option value="6">6</option>
+                        </select>
+
+                    </div>
+
+
+
+                    <div class="input-group">
+                        <span style="border-bottom: transparent; border-right: transparent" class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                        <input type="email" data-ng-model="user.Email" class="form-control" id="Email1" placeholder="Your Email" />
+
+                    </div>
+
+
+
+
+
+                    <div class="input-group">
+                        <span style="border-bottom: transparent; border-right: transparent;" class="input-group-addon"><i class="fa fa-th"></i></span>
+                        <select style="border-left: 1px solid #fff !important; border-right: 1px solid #fff !important; border-bottom: 1px solid #fff !important;" data-ng-model="user.completion" class="form-control">
+                            <option value="" disabled selected>Select your Completion</option>
+                            <option value="Fair">Fair</option>
+                            <option value="savla">savla</option>
+                            <option value="average">average</option>
+                            <option value="black">black</option>
+
+                        </select>
+
+                    </div>
+
+                    <div class="input-group">
+                        <span style="border-bottom: transparent; border-right: transparent;" class="input-group-addon"><i class="fa fa-th"></i></span>
+                        <select style="border-left: 1px solid #fff !important; border-right: 1px solid #fff !important; border-bottom: 1px solid #fff !important;" data-ng-model="user.bloodgroup" class="form-control">
+                            <option value="" disabled selected>Select your Blood group</option>
+                            <option value=" O +"> O +</option>
+                            <option value="O -">O -</option>
+                            <option value="A +">A +</option>
+                            <option value="A -">A -</option>
+                             <option value=" B +"> B +</option>
+                            <option value="B -">B -</option>
+                            <option value="AB +">AB +</option>
+                            <option value="AB">AB</option>
+                        </select>
+
+                    </div>
+
+
+
+
+                    <div class="input-group">
+                        <span style="border-bottom: transparent; border-right: transparent" class="input-group-addon"><i class="fa fa-male"></i></span>
+                        <input type="text" data-ng-model="user.hobbies" class="form-control" id="Text5" placeholder="your Hobbies" required title="Enter your Father name" />
+
+
+                    </div>
+
+
+
+                </div>
+
+
+
+
+                <div>
+                    <br />
+                    <br />
+                </div>
+
+
+                <div class="bottommenu">
+
+                    <div class="row">
+                        <div class="col-md-12 col-xs-12">
+                            <a onclick="gotocontact()" style="background: #bb001f" class="btn btn-login">Next</a>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+
+            </div>
+
+        </div>
+
+        <div style="display: none;" class="contactsection">
+
+            <div style="background: #BBBBBB; text-align: center; padding: 13px;">
+                <i onclick="backtopersonal();" style="float: left; font-size: 28px" class="fa fa-arrow-circle-left"></i><a style="font-size: 16px; color: #000;">Contact details</a>
+            </div>
+            <div class="col-md-12">
+
+                <div class="register">
+
+                    <div>
+                        <br />
+                    </div>
+
+                    <div class="input-group">
+                        <span style="border-bottom: transparent;" class="input-group-addon"><i class="fa fa-mobile"></i></span>
+                        <input type="text" data-ng-model="user.ContactNo" id="contact" class="form-control" placeholder="Contact number *" />
+
+                    </div>
+
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-map-marker"></i></span>
+                        <input type="text" data-ng-model="user.City" class="form-control" placeholder="City"  />
+
+                    </div>
+
+                    <div class="input-group">
+                        <span style="border-bottom: transparent; border-right: transparent" class="input-group-addon"><i class="fa fa-map-marker"></i></span>
+                        <input type="email" data-ng-model="user.State" class="form-control" placeholder="Your State"  />
+
+                    </div>
+
+                    <div class="input-group">
+                        <span style="border-bottom: transparent; border-right: transparent" class="input-group-addon"><i class="fa fa-globe"></i></span>
+                        <input type="text" data-ng-model="user.Country" class="form-control" placeholder="your Country"  />
+
+
+                    </div>
+
+                    <div class="input-group">
+                        <span style="border-bottom: transparent; border-right: transparent" class="input-group-addon"><i class="fa fa-globe"></i></span>
+                        <input type="text" data-ng-model="user.zipcode" id="zipcode" class="form-control" placeholder="Zip code *"  />
+
+
+                    </div>
+
+
+                      <div class="input-group">
+                        <span style="border-bottom: transparent; border-right: transparent" class="input-group-addon"><i class="fa fa-globe"></i></span>
+                        <input type="text" data-ng-model="user.rtonumber" class="form-control" placeholder="Rto Number"  />
+                    </div>
+
+
+                    
+
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-location-arrow"></i></span>
+                        <input style="border-bottom: 1px solid #ccc;" type="text" data-ng-model="user.Address" class="form-control" placeholder="your Address"  />
+
+                    </div>
+
+
+                </div>
+
+
+
+
+
+
+
+                <div class="bottommenu">
+
+                    <div class="row">
+                        <div class="col-md-12 col-xs-12">
+                            <a onclick="gotosocial()" style="background: #bb001f" class="btn btn-login">Next</a>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+
+            </div>
+
+        </div>
+
+
+        <div style="display: none;" class="socialsection">
+
+            <div style="background: #BBBBBB; text-align: center; padding: 13px;">
+                <i onclick="backtocontact();" style="float: left; font-size: 28px" class="fa fa-arrow-circle-left"></i><a style="font-size: 16px; color: #000;">Social details</a>
+            </div>
+            <div class="col-md-12">
+
+                <div class="register">
+
+                    <div>
+                        <br />
+                    </div>
+
+                    <div class="input-group">
+                        <span style="border-bottom: transparent; border-right: transparent;" class="input-group-addon"><i class="fa fa-th"></i></span>
+                        <select id="maritalstatus" style="border-left: 1px solid #fff !important; border-right: 1px solid #fff !important; border-bottom: 1px solid #fff !important;" data-ng-model="user.Maritalstatus" class="form-control">
+                            <option value="" disabled selected>Select your Marital status *</option>
+                            <option value="value">Marital status</option>
+                            <option value="Never Married">Never Married</option>
+                            <option value="Married">Married</option>
+                            <option value="Awaiting divorced">Awaiting divorced</option>
+                            <option value="Divorced">Divorced</option>
+                            <option value="Widowed">Widowed</option>
+                            <option value="Annuled">Annuled</option>
+                        </select>
+
+                    </div>
+
+
+                    <div class="input-group">
+                        <span style="border-bottom: transparent; border-right: transparent;" class="input-group-addon"><i class="fa fa-th"></i></span>
+                        <select style="border-left: 1px solid #fff !important; border-right: 1px solid #fff !important; border-bottom: 1px solid #fff !important;" data-ng-model="user.languageknown" class="form-control">
+                            <option value="" disabled selected>Select Language</option>
+                            <option value="value">Language Known</option>
+                            <option value="Hindi">Hindi</option>
+                            <option value="English">English</option>
+                            <option value="Gujrati">Gujrati</option>
+                            <option value="Marathi">Marathi</option>
+
+                        </select>
+
+                    </div>
+
+                    <div class="input-group">
+                        <span style="border-bottom: transparent; border-right: transparent;" class="input-group-addon"><i class="fa fa-th"></i></span>
+
+                        <select class="form-control" data-ng-model="user.Mothergotra" style="border-left: 1px solid #fff !important; border-right: 1px solid #fff !important; border-bottom: 1px solid #fff !important;">
+                            <option value="" disabled selected>Select Mothergotra</option>
+                              <option value="kharaadaa">kharaadaa</option>
+                            <option value="gangasiyaa">gangasiyaa</option>
+                            <option value="chuvaanaa">chuvaanaa</option>
+                            <option value="bhadhaadharaa">bhadhaadharaa</option>
+                           
+                        </select>
+
+                       
+
+                    </div>
+
+                    <div class="input-group">
+                        <span style="border-bottom: transparent; border-right: transparent;" class="input-group-addon"><i class="fa fa-th"></i></span>
+
+                         <select class="form-control" data-ng-model="user.Mothergotra" style="border-left: 1px solid #fff !important; border-right: 1px solid #fff !important; border-bottom: 1px solid #fff !important;">
+                              <option value="" disabled selected>Select Mothergotra</option>
+                                <option value="kharaadaa">kharaadaa</option>
+                            <option value="gangasiyaa">gangasiyaa</option>
+                            <option value="chuvaanaa">chuvaanaa</option>
+                            <option value="bhadhaadharaa">bhadhaadharaa</option>
+                           
+                        </select>
+
+                      
+
+                    </div>
+
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-th"></i></span>
+
+                         <select class="form-control" data-ng-model="user.Nanigotra" style="border-left: 1px solid #fff !important; border-right: 1px solid #fff !important; border-bottom: 1px solid #fff !important;">
+                            <option value="" disabled selected>Select Nanigotra</option>
+                              <option value="kharaadaa">kharaadaa</option>
+                            <option value="gangasiyaa">gangasiyaa</option>
+                            <option value="chuvaanaa">chuvaanaa</option>
+                            <option value="bhadhaadharaa">bhadhaadharaa</option>
+                           
+                        </select>
+
+                    
+
+
+                    </div>
+
+
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-female"></i></span>
+                        <input style="border-bottom: 1px solid #ccc;" type="text" data-ng-model="user.Mothername" class="form-control" id="mothername" placeholder="your Mother name *"  />
+
+                    </div>
+
+                    <div class="input-group">
+                        <span style="border-bottom: transparent; border-right: transparent" class="input-group-addon"><i class="fa fa-male"></i></span>
+                        <input type="text" data-ng-model="user.Fathername" class="form-control" id="fathername" placeholder="your Father name *"  />
+
+
+                    </div>
+
+
+
+
+
+                </div>
+
+
+
+
+
+
+
+                <div class="bottommenu">
+
+                    <div class="row">
+                        <div class="col-md-12 col-xs-12">
+                            <a onclick="gotoeducation()" style="background: #bb001f" class="btn btn-login">Next</a>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+
+            </div>
+
+        </div>
+
+
+        <div style="display: none;" class="educationsection">
+
+            <div style="background: #BBBBBB; text-align: center; padding: 13px;">
+                <i onclick="backtosocial();" style="float: left; font-size: 28px" class="fa fa-arrow-circle-left"></i><a style="font-size: 16px; color: #000;">Education details</a>
+            </div>
+            <div class="col-md-12">
+
+                <div class="register">
+
+                    <div>
+                        <br />
+                    </div>
+
+                    <div class="input-group">
+                        <span style="border-bottom: transparent; border-right: transparent;" class="input-group-addon"><i class="fa fa-th"></i></span>
+                        <select style="border-left: 1px solid #fff !important; border-right: 1px solid #fff !important; border-bottom: 1px solid #fff !important;" data-ng-model="user.education" class="form-control">
+                            <option value="" disabled selected>Select your Education</option>
+                            <option value="Btech">Btech</option>
+
+                        </select>
+
+                    </div>
+
+
+
+
+                    <div class="input-group">
+                        <span style="border-bottom: transparent; border-right: transparent;" class="input-group-addon"><i class="fa fa-th"></i></span>
+                        <input type="text" data-ng-model="user.job" class="form-control" placeholder="Job" />
+
+                    </div>
+
+
+
+                    <div class="input-group">
+                        <span style="border-bottom: transparent; border-right: transparent" class="input-group-addon"><i class="fa fa-th"></i></span>
+                        <input type="text" data-ng-model="user.package" class="form-control" id="Text6" placeholder="your package" />
+
+
+                    </div>
+
+
+
+
+
+                </div>
+
+
+
+
+
+
+
+                <div class="bottommenu">
+
+                    <div class="row">
+                        <div class="col-md-12 col-xs-12">
+                            <a onclick="gotologin()" style="background: #bb001f" class="btn btn-login">Next</a>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+
+            </div>
+
+        </div>
+
+
+        <div style="display: none;" class="loginsection">
+
+            <div style="background: #BBBBBB; text-align: center; padding: 13px;">
+                <i onclick="backtoeducation();" style="float: left; font-size: 28px" class="fa fa-arrow-circle-left"></i><a style="font-size: 16px; color: #000;">Login details</a>
+            </div>
+            <div class="col-md-12">
+
+                <div class="register">
+
+                    <div>
+                        <br />
+                    </div>
+
+
+
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                        <input type="text" data-ng-model="user.UserName" class="form-control" id="username" placeholder="Your User Name" required title="Enter your user name *" />
+
+                    </div>
+
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                        <input type="password" data-ng-model="user.Password" class="form-control" id="password" placeholder="Your Password *" required title="Enter your password * " />
+
+                    </div>
+
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                        <input style="border-bottom: 1px solid #ccc;" type="Password" data-ng-model="user.Password" class="form-control" placeholder="Confirm Password *" />
+
+
+                    </div>
+
+
+
+
+                </div>
+
+
+
+
+
+
+
+                <div class="bottommenu">
+
+                    <div class="row">
+                        <div class="col-md-12 col-xs-12">
+
+                            <a data-ng-click="add()" style="background: #bb001f" class="btn btn-login">Next-You are almost there</a>
+
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+
+            </div>
+
+        </div>
+
+    </form>
+
+    <!--  Scripts-->
+    <script>
+        $('#radioBtn a').on('click', function () {
+            var sel = $(this).data('title');
+            var tog = $(this).data('toggle');
+            $('#' + tog).prop('value', sel);
+
+            $('a[data-toggle="' + tog + '"]').not('[data-title="' + sel + '"]').removeClass('active').addClass('notActive');
+            $('a[data-toggle="' + tog + '"][data-title="' + sel + '"]').removeClass('notActive').addClass('active');
+        })
+
+        function gotocontact() {
+
+            debugger;
+
+            var name = $("#name").val()
+            var dob = $("#dob").val()
+            var gender = $("#gender").val()
+
+            if (name != "" && dob != "" && gender != "") {
+                $(".personalsection").hide();
+                $(".contactsection").show();
+
+            }
+
+            else {
+                alert("Fill star mark fields");
+            }
+
+
+          
+        }
+
+        function gotosocial() {
+
+            debugger;
+
+            var contact = $("#contact").val()
+            var zipcode = $("#zipcode").val()
+
+            if (contact != "" && zipcode != "") {
+                $(".contactsection").hide();
+                $(".socialsection").show();
+
+            }
+
+            else {
+                alert("Fill star mark fields");
+            }
+
+            
+
+            
+            
+
+         
+        }
+
+        function gotoeducation() {
+
+
+            var maritalstatus = $("#maritalstatus").val()
+            var mothername = $("#mothername").val()
+            var fathername = $("#fathername").val()
+
+            if (maritalstatus != "" && mothername != "" && fathername != "") {
+                $(".socialsection").hide();
+                $(".educationsection").show();
+
+            }
+
+            else {
+                alert("Fill star mark fields");
+            }
+
+           
+        }
+
+        function gotologin() {
+
+            $(".educationsection").hide();
+            $(".loginsection").show();
+        }
+
+        function backtopersonal() {
+            $(".personalsection").show();
+            $(".contactsection").hide();
+        }
+
+        function backtocontact() {
+            $(".contactsection").show();
+            $(".socialsection").hide();
+        }
+
+        function backtoeducation() {
+            $(".educationsection").show();
+            $(".loginsection").hide();
+        }
+
+        function backtosocial() {
+            $(".socialsection").show();
+            $(".educationsection").hide();
+        }
+
+    </script>
+
+
+</body>
+</html>

@@ -39,46 +39,66 @@
 
             </div>
             <div class="col-xs-6">
-                <div style="margin-top:5px;" class="pull-right">
-                   
-                </div>
+                <div style="float:right;">
+               
                 <div class="dropdown">
                     <span class="dropdown-toggle" data-toggle="dropdown">
-                      <img src="http://www.maidhkshatriya.com/UploadedFiles/DummyImage.png" style="height:35px; width:35px;">
-                        <span class="caret"></span>
+
+                        
+                      <img src="{{loginuserimage}}" style="height:40px; width:40px; border-radius:25px; margin-top:2px;">
+                       {{loginusername}} <span class="caret"></span>
                     </span>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Edit profile</a></li>
-                        <li><a href="#">Manage Image</a></li> 
+                    <ul style="margin-right:10px;" class="dropdown-menu">
+                        <li><a ng-click="addimage()">Manage Image</a></li> 
                         <li><a ng-click="LogOut()">Log out</a></li>
                     </ul>
                 </div>
+                    </div>
             </div>
         </div>
 
     </header>
 
+      <div style="display:none; padding-top:50px;" id="photoupload"  >
+          <div class="container">
+               <form enctype="multipart/form-data" method="post" novalidate="novalidate">
+
+                   <h3>Upload Your Image</h3>
+                   <hr />
+
+                    <input type="hidden" id="UserID" name="UserID" data-ng-model="UserId" value="{{UserId}}" />
+
+                      <input type="file" style="width:317px" name="fileUpload" id="fileUpload">
+
+                   <br />
+
+                    <input type="submit" value="Upload" data-ng-click="upload()" class="btn btn-login" id="ajaxUploadButton">
+               </form>
+              </div>
+           </div>
 
 
-    <div style="padding-top: 32px;">
+
+    <div class="mainsection" style="padding-top: 32px;">
 
         <div  class="infosec row">
             <div class="center col-xs-6">
                 <h1>49</h1>
-                <a style="margin-top:0px;" class="btn btn-login"  href="#"><i class="fa fa-male"></i>&nbsp;Male</a>
+                <a ng-click="male()" style="margin-top:0px;" class="btn btn-login"  href="#"><i class="fa fa-male"></i>&nbsp;Male</a>
             </div>
 
             <div class="center col-xs-6">
                 <h1>200</h1>
-                <a style="margin-top:0px;" class="btn btn-login"  href="#"><i class="fa fa-female"></i>&nbsp;Female</a>
+                <a onclick="female()" style="margin-top:0px;" class="btn btn-login"  href="#"><i class="fa fa-female"></i>&nbsp;Female</a>
             </div>
         </div>
         <div  >
-            <div class="input-group">
-                <span  class="input-group-addon"><i class="fa fa-search"></i></span>
-                <input ng-change="getAll(PagingModel)" ng-model="PagingModel.SearchKeyWord" type="text" class="form-control" name="username" value="" placeholder="Search by name,email,father name">
-            </div>
+            
             <div class="listview">
+                <div class="input-group">
+                <span  class="input-group-addon"><i class="fa fa-search"></i></span>
+                <input ng-change="getAll(PagingModel)" ng-model="PagingModel.SearchKeyWord" id="searchtext" type="text" class="form-control" name="username" value="" placeholder="Search by name,email,father name">
+            </div>
                 <div class="list-group">
                 <div data-ng-repeat="user in users" class="list-group-item">
                     <div class="row-picture templateimage" style="">
@@ -88,8 +108,8 @@
                   
                     <div class="row-content">
                         <div data-ng-click="get(user)" style="cursor: pointer; color: #000">
-                            <h5 class="list-group-item-heading">{{ user.Name }}<span class="pull-right">27 Yr</span></h5>
-                            <p class="list-group-item-text"> {{ user.Email }} <span class="pull-right">Married</span></p>
+                            <h5 class="list-group-item-heading">{{ user.Name }}<span class="pull-right">{{ user.Gender }}</span></h5>
+                            <p class="list-group-item-text"> {{ user.Email }} <span class="pull-right">{{ user.Maritalstatus }}</span></p>
                             <p class="list-group-item-text text"> {{ user.ContactNo }}</p>
                        
                         </div>
@@ -111,28 +131,115 @@
                     </div>
                         </div>
                 </div>
-                   <a style="margin-top:0px;" class="btn btn-login" href="#">{{user.Name}} - 27 Yr</a>
+                   <a style="margin-top:0px;" class="btn btn-login" href="#">{{user.Name}} - {{user.Gender}}</a>
 
-                <div class="container">
+
+           
                     <br />
-                    
-                       <p><b>Last online today</b></p>
-                <div class="row">
-                    <div class="col-xs-6"> <p> {{user.Address}} </p> </div>
-                     <div class="col-xs-6"> <p> {{user.ContactNo}} </p></div>
+
+
+                    <div class="panel with-nav-tabs panel-default">
+                <div class="panel-heading">
+                        <ul class="nav nav-tabs">
+                            <li class="active"><a href="#tab1default" data-toggle="tab">Personal</a></li>
+                            <li><a href="#tab2default" data-toggle="tab">Social</a></li>
+                            <li><a href="#tab3default" data-toggle="tab">Other</a></li>
+                         
+                        </ul>
+                </div>
+                <div class="panel-body">
+                    <div class="tab-content">
+                        <div class="tab-pane fade in active" id="tab1default">
+
+                               <div class="row">
+                    <div class="col-xs-12"> <p> {{user.DOB}} {{user.birthtime}} {{user.birthplace}} </p> </div>
+                  
                 </div>
 
                     <div class="row">
                     <div class="col-xs-6"> <p> {{user.Email}} </p> </div>
-                     <div class="col-xs-6"> <p> 27 years 5'7' </p></div>
+                     <div class="col-xs-6"> <p> {{user.height}} {{user.completion}} </p></div>
                 </div>
 
                     <div class="row">
-                    <div class="col-xs-6"> <p> Married </p> </div>
-                     <div class="col-xs-6"> <p> MBA/Btech </p></div>
+                    <div class="col-xs-6"> <p> {{user.Maritalstatus}} </p> </div>
+                     <div class="col-xs-6"> <p> {{user.education}} {{user.package}} </p></div>
                 </div>
-                    <p>Some notes goes here Some notes goes here Some notes goes here </p>
+
+                            <div class="row">
+                    <div class="col-xs-6"> <p> {{user.ContactNo}} </p> </div>
+                     <div class="col-xs-6"> <p> {{user.zipcode}}  </p></div>
                 </div>
+
+                            <div class="row">
+                    <div class="col-xs-6"> <p> {{user.City}} </p> </div>
+                     <div class="col-xs-6"> <p> {{user.State}}  </p></div>
+                </div>
+
+                        </div>
+                        <div class="tab-pane fade" id="tab2default">
+
+                            <div class="row">
+                      <div class="col-xs-12"> <p> Language known : {{user.languageknown}}  </p> </div>
+                  
+
+                                
+                       </div>
+
+                            <div class="row">
+                      <div class="col-xs-12"> <p> Mother gotra : {{user.Mothername}}  </p> </div>
+                 
+                       </div>
+
+
+                                <div class="row">
+                      <div class="col-xs-12"> <p> Father gotra : {{user.FatherName}}  </p> </div>
+                  
+                       </div>
+
+                            <div class="row">
+                  
+                     <div class="col-xs-12"> <p>  Nani gotra : {{user.Nanigotra}}</p></div>
+
+                                
+                       </div>
+
+                            <div class="row">
+                      <div class="col-xs-12"> <p> Dadi gotra : {{user.Dadigotra}}  </p> </div>
+                  
+
+                                
+                       </div>
+
+                            
+
+                        </div>
+                        <div class="tab-pane fade" id="tab3default">
+
+                            <div class="row">
+                      <div class="col-xs-12"> <p> Blood Group : {{user.bloodgroup}}  </p> </div>
+                  
+
+                                
+                       </div>
+
+                            <div class="row">
+                      <div class="col-xs-12"> <p> Hobbies : {{user.hobbies}}  </p> </div>
+                  
+
+                                
+                       </div>
+
+
+                        </div>
+                      
+                    </div>
+                </div>
+            </div>
+
+                    
+                      
+              
              
 
 
@@ -142,7 +249,6 @@
             </div>
 
             
-
 
         </div>
 
@@ -228,6 +334,11 @@
         });
     </script>-->
     <!--  Scripts-->
+
+
+    <script>
+      
+    </script>
 
 
 </body>
