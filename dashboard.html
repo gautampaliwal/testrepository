@@ -59,6 +59,12 @@
 
     </header>
 
+    <div>
+          <i style="display:none; position:absolute; margin-left:35%; font-size:75px; margin-top:150px; z-index:1000; color:#bb001f" class="spinner fa fa-spin fa-spinner"></i>
+    </div>
+
+  
+
       <div style="display:none; padding-top:50px;" id="photoupload"  >
           <div class="container">
                <form enctype="multipart/form-data" method="post" novalidate="novalidate">
@@ -89,7 +95,7 @@
 
             <div class="center col-xs-6">
                 <h1>200</h1>
-                <a onclick="female()" style="margin-top:0px;" class="btn btn-login"  href="#"><i class="fa fa-female"></i>&nbsp;Female</a>
+                <a ng-click="female()" style="margin-top:0px;" class="btn btn-login"  href="#"><i class="fa fa-female"></i>&nbsp;Female</a>
             </div>
         </div>
         <div  >
@@ -108,10 +114,10 @@
                   
                     <div class="row-content">
                         <div data-ng-click="get(user)" style="cursor: pointer; color: #000">
-                            <h5 class="list-group-item-heading">{{ user.Name }}<span class="pull-right">{{ user.Gender }}</span></h5>
+                            <h5 class="list-group-item-heading">{{ user.Name }}<span style="font-size:12px;" class="pull-right">{{ user.Gender }}-{{user.Age}} Yr.</span></h5>
                             <p class="list-group-item-text"> {{ user.Email }} <span class="pull-right">{{ user.Maritalstatus }}</span></p>
                             <p class="list-group-item-text text"> {{ user.ContactNo }}</p>
-                       
+                            <p style="display:none;"> {{ user.Caste }}</p>
                         </div>
                     </div>
                 </div>
@@ -187,13 +193,13 @@
                        </div>
 
                             <div class="row">
-                      <div class="col-xs-12"> <p> Mother gotra : {{user.Mothername}}  </p> </div>
+                      <div class="col-xs-12"> <p> Mother Name : {{user.Mothername}}  </p> </div>
                  
                        </div>
 
 
                                 <div class="row">
-                      <div class="col-xs-12"> <p> Father gotra : {{user.FatherName}}  </p> </div>
+                      <div class="col-xs-12"> <p> Father Name : {{user.FatherName}}  </p> </div>
                   
                        </div>
 

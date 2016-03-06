@@ -58,14 +58,23 @@
     <!-- Pre Loader -->
 
 
-
     <form class="form-horizontal" role="form" name="adduserform" novalidate>
 
 
         <div class="personalsection">
 
             <div style="background: #BBBBBB; text-align: center; padding: 13px;">
-                <a style="font-size: 16px; color: #000;">Personal details</a>
+
+                <div class="row">
+                    <div class="col-xs-7">
+                         <a style="font-size: 15px; color: #000;">Personal details</a>
+                    </div>
+                    <div class="col-xs-5">
+                         <a href="index.html" style="font-size: 15px; color: #fff; background:#bb001f; padding:5px;">Login</a>
+                    </div>
+                </div>
+
+               
             </div>
             <div class="col-md-12">
 
@@ -361,8 +370,8 @@
                     <div class="input-group">
                         <span style="border-bottom: transparent; border-right: transparent;" class="input-group-addon"><i class="fa fa-th"></i></span>
 
-                        <select class="form-control" data-ng-model="user.Mothergotra" style="border-left: 1px solid #fff !important; border-right: 1px solid #fff !important; border-bottom: 1px solid #fff !important;">
-                            <option value="" disabled selected>Select Mothergotra</option>
+                        <select class="form-control" data-ng-model="user.Caste" style="border-left: 1px solid #fff !important; border-right: 1px solid #fff !important; border-bottom: 1px solid #fff !important;">
+                            <option value="" disabled selected>Select gotra</option>
                               <option value="kharaadaa">kharaadaa</option>
                             <option value="gangasiyaa">gangasiyaa</option>
                             <option value="chuvaanaa">chuvaanaa</option>
@@ -572,7 +581,7 @@
                     <div class="row">
                         <div class="col-md-12 col-xs-12">
 
-                            <a data-ng-click="add()" style="background: #bb001f" class="btn btn-login">Next-You are almost there</a>
+                            <a data-ng-click="add()" style="background: #bb001f" class="btn btn-login">Next-You are almost there <i style="display:none;" class="spinner fa fa-spin fa-spinner"></i> </a>
 
                         </div>
                     </div>

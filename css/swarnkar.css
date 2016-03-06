@@ -139,8 +139,11 @@
 .list-group-item-heading {
     margin-top: 0;
     margin-bottom: 5px;
-    font-size: 17px;
+    font-size: 15px;
 }
+
+
+
 
 body {
 
@@ -176,6 +179,12 @@ body {
 nav-tabs {
     border-bottom: 1px solid #ddd;
     background: #989898;
+}
+
+
+.list-group-item-text {
+
+    font-size:13px;
 }
 
    

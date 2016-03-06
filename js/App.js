@@ -57,10 +57,21 @@
             // add User
             $scope.add = function () {
 
+                $(".spinner").show();
+
              
                 debugger;
 
                 var currentUser = this.user;
+
+
+                var dob = "2010-07-21";
+                dob = new Date(dob);
+                var today = new Date();
+                var age = Math.floor((today - dob) / (365.25 * 24 * 60 * 60 * 1000));
+
+                currentUser.Age = age;
+
              
                     userFactory.addUser(currentUser).success(function (data) {
 
@@ -74,6 +85,7 @@
                         window.location.href = "index.html";
                         //reset form
                         $scope.user = null;
+                        $(".spinner").show();
                         // $scope.adduserform.$setPristine(); //for form reset
 
                         //  $('#userModel').modal('hide');
@@ -83,14 +95,20 @@
                         alert("Error");
                         debugger;
                         $scope.error = "An Error has occured while Adding user! " + data.ExceptionMessage;
+                        $(".spinner").show();
                     });
                 
             };
 
             $scope.uploadimage = false;
 
+
             //get all Users
             $scope.getAll = function (PagingModel) {
+
+                $(".spinner").show();
+
+
                 debugger;
                 userFactory.getUsersList(PagingModel).success(function (data) {
                     debugger;
@@ -102,16 +120,19 @@
 
                     }
 
+                    $(".spinner").hide();
+
                    
                 }).error(function (data) {
                     alert("Error");
+                    $(".spinner").hide();
                     debugger;
                     $scope.error = "An Error has occured while Loading users! " + data.ExceptionMessage;
                 });
             };
+          
 
-
-           $scope.male = function() {
+                       $scope.male = function() {
 
                 document.getElementById('searchtext').value = "Male";
 
@@ -143,11 +164,6 @@
                 var age = Math.floor((today - dob) / (365.25 * 24 * 60 * 60 * 1000));
                 $('#age').html(age + ' years old');
 
-              
-
-                
-
-             
             }
 
 
@@ -169,7 +185,11 @@
                 // Add the uploaded image content to the form data collection
                 if (files.length > 0) {
                     data.append("UploadedImage", files[0]);
+                    //   $scope.loginuserimage = "http://www.maidhkshatriya.com/UploadedFiles/" + files[0].name;
+
+                    $localStorage.CurrentUser.ImagePath = files[0].name
                     $scope.loginuserimage = "http://www.maidhkshatriya.com/UploadedFiles/" + files[0].name;
+                    $scope.$apply();
                  
                 }
 
@@ -194,6 +214,10 @@
                             debugger;
                             if (responseData.Key) {
                                 $("#fileUpload").val('');
+
+
+                             
+
                                // $scope.loginuserimage = 
                                 $('#photoupload').hide();
                                 $(".mainsection").show();
@@ -274,6 +298,8 @@ window.location.href="index.html";
 $scope.LoginUser=function(Loguser)
 {
 
+    $(".spinner").show();
+
     debugger;
  userFactory.LoginUser(Loguser).success(function (data) {
                     $scope.CurrentUser = data;
@@ -281,15 +307,18 @@ $scope.LoginUser=function(Loguser)
                     console.log($localStorage.CurrentUser);
                     if($scope.CurrentUser.UserId==0)
                     {
+                        $(".spinner").hide();
                     $scope.IsErrorMessageOn=true;
                     }
                     else {
                         debugger;
-                    window.location.href="dashboard.html";
+                        window.location.href = "dashboard.html";
+                        $(".spinner").hide();
                     $scope.IsErrorMessageOn=false;
                     }
                 }).error(function (data) {
                     $scope.error = "An Error has occured while Loading users! " + data.ExceptionMessage;
+                    $(".spinner").hide();
                 });
 };
 
